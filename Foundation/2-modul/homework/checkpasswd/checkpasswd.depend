@@ -1,5 +1,0 @@
-# depslib dependency file v1.0
-1642616220 source:/home/shoh/Documents/PDP/Foundation/2-modul/homework/checkpasswd/main.cpp
-	<iostream>
-	<ctype.h>
-
