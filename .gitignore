@@ -2,6 +2,8 @@
 *.xcodeproj
 *.exec
 *.DS_Store
+*.cbp
+*.depend
 
 # Prerequisites
 *.d
