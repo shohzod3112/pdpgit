@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1641140926 source:/home/shoh/Documents/PDP/Foundation/homework/saytdagi masalalar/switchga_misol/setprecision/main.cpp
+	<iostream>
+	<iomanip>
+
