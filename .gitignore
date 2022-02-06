@@ -1,3 +1,6 @@
+#For xcode
+.xcodeproj
+.exec
 # Prerequisites
 *.d
 
