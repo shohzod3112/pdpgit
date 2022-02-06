@@ -1,6 +1,8 @@
 #For xcode
-.xcodeproj
-.exec
+*.xcodeproj
+*.exec
+*.DS_Store
+
 # Prerequisites
 *.d
 
