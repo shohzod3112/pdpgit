@@ -1,0 +1,214 @@
+//
+//  main.cpp
+//  1_bilet
+//
+//  Created by Shohzod on 08/02/22.
+//  s satr berilgan. s satrda "c" harfi necha marta qatnashganligini aniqlovchi dastur tuzing.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string s;
+    int counter = 0;
+    
+    cout << "s = "; getline(cin,s);
+    
+    for(char letter : s)
+    if(letter == 'c')
+        counter++;
+    
+    cout << "s satrda c harfi " << counter << " marta qatnashgan!!!" << endl;
+    return 0;
+}
+
+*********************************************************************
+
+//
+//  main.cpp
+//  2_bilet
+//
+//  Created by Shohzod on 08/02/22.
+//  B stringda "A" nechanchi indexda uchrashini aniqlovchi dastur tuzing.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    string B;
+    
+    cout << "B = "; getline(cin, B);
+    
+    cout << "B satrda A harfi " << B.find("A") << " indexda kelgan" << endl;
+    return 0;
+}
+
+
+*********************************************************************
+
+//
+//  main.cpp
+//  3_bilet
+//
+//  Created by Shohzod on 08/02/22.
+//  Foydalanuvchi tomonidan kiritilgan bahoga mos ravishda examda olgan darajasini chop etuvchi funksiya tuzing.
+
+#include <iostream>
+
+using namespace std;
+
+void grade(int n)
+{
+    if(n >= 91 && n <= 100)
+        cout << "AA" << endl;
+    if(n >= 81 && n <= 90)
+        cout << "AB" << endl;
+    if(n >= 71 && n <= 80)
+        cout << "BB" << endl;
+    if(n >= 61 && n <= 70)
+        cout << "BC" << endl;
+    if(n >= 51 && n <= 60)
+        cout << "CD" << endl;
+    if(n >= 41 && n <= 50)
+        cout << "DD" << endl;
+    if(n <= 40)
+        cout << "Fail" << endl;
+}
+
+int main() {
+    int n;
+    
+    cout << "Bahoni kiriting: "; cin >> n;
+    grade(n);
+    
+    return 0;
+}
+
+
+
+*********************************************************************
+
+
+//
+//  main.cpp
+//  4_bilet
+//
+//  Created by Shohzod on 08/02/22.
+//  Bir o'lchovli massivdagi manfiy sonlar necha marta qatnashganini toping
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n, counter = 0;
+    
+    cout << "Bir o'lchovli massiv nechta elementdan iborat bo'lsin?" << endl;
+    cout << "Elementlar soni = "; cin >> n;
+    
+    int a[n];
+    
+    for (int i = 0; i < n; i++)
+    {
+        cout << "a[" << i << "] = "; cin >> a[i];
+        if(a[i] < 0)
+            counter++;
+    }
+    
+    cout << "Massivda " << counter << " ta manfiy son qatnashgan" << endl;
+    return 0;
+}
+
+
+*********************************************************************
+
+
+//
+//  main.cpp
+//  5_bilet
+//
+//  Created by Shohzod on 08/02/22.
+//  M x N o'lchamli matritsa berilgan. Matritsadagi musbat sonlar sonini aniqlang.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n, m, counter = 0;
+   
+    cout << "Ikki o'lchovli massiv nechta satrdan iborat bo'lsin?" << endl;
+    cout << "Elementlar soni = "; cin >> n;
+    
+    cout << "Ikki o'lchovli massiv nechta ustundan iborat bo'lsin?" << endl;
+    cout << "Elementlar soni = "; cin >> m;
+
+    int a[n][m];
+
+    for (int i = 0; i < n; i++)
+    for (int j = 0; j < m; j++)
+    {
+       cout << "a[" << i << "][" << j << "] = "; cin >> a[i][j];
+       if(a[i][j] > 0)
+           counter++;
+    }
+   
+    for (int i = 0; i < n; i++)
+    {
+        cout << endl;
+
+        for (int j = 0; j < m; j++)
+            cout << a[i][j] << " ";
+            cout << endl;
+    }
+    cout << endl;
+
+    cout << "Matritsada " << counter << " ta musbat son qatnashgan" << endl;
+    return 0;
+}
+
+
+*********************************************************************
+
+//
+//  main.cpp
+//  6_bilet
+//
+//  Created by Shohzod on 08/02/22.
+//  Konsoldan kiritilgan satr ichida "is" uchraganda jumlani teskari ma'noga o'giring, Misol: "there is a car" -->
+//  --> "there is not a car". Ammo  "is" dan keyin so'zning o'zida not bo'lsa o'zgartirilmasin misol: "this is not my pen" --> "this is not my pen".
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    string str, s1 = "not", natija;
+    int index = 0, indexnot = 0;
+    
+    cout << "Satr kiriting:"; getline(cin,str);
+
+    for (int i = 0; i < str.length(); i++) {
+        if(str.substr(i,2) == "is")
+            index = i + 1;
+        if(str.substr(i,3) == "not")
+            indexnot = i + 1;
+    }
+    
+    if(index > 0 && indexnot > 0)
+        cout << str << endl;
+    else
+    {
+        natija = str.insert(index + 2, s1);
+        if(index > 0)
+            cout << natija << endl;
+    }
+            
+    cout << index << endl;
+    cout << indexnot << endl;
+    
+    return 0;
+}
