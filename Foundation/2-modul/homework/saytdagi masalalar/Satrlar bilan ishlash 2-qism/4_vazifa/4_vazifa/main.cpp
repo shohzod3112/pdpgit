@@ -9,18 +9,22 @@ using namespace std;
 int main()
 {
     string s, c, natija;
+    int j;
 
     cout << "s = "; getline(cin,s);
     cout << "c = "; getline(cin,c);
 
-    for(int i = 0; i < s.length(); i++)
+//    for(int i = 0; i < s.length(); i++)
+//    {
+//        cout << "i = " << i << endl;
+    j = s.length();
+    while(j)
     {
-        cout << "i = " << i << endl;
-        natija = s.insert(i, c);
-        cout << "natija = " << natija << endl;
+        natija = s.insert(j, c);
+        j--;
     }
 
-    //cout << "Yangi satr = " << natija << endl;
+    cout << "Yangi satr = " << natija << endl;
 
     return 0;
 }
